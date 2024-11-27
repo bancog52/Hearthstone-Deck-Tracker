@@ -31,6 +31,14 @@ jobs:
       - name: Build (Release)
         run: msbuild "./Hearthstone Deck Tracker.sln" /p:Configuration=Release /p:Platform="x86"
 
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: HDT-Release
+          path: |
+            Hearthstone Deck Tracker/bin/x86/Release/**
+          retention-days: 5
+
       - name: Setup VSTest
         uses: Malcolmnixon/Setup-VSTest@v4
 
