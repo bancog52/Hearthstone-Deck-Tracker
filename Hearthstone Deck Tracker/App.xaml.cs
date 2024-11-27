@@ -92,6 +92,9 @@ namespace Hearthstone_Deck_Tracker
 
 		private void App_OnStartup(object sender, StartupEventArgs e)
 		{
+			 // 禁用硬件加速
+ 			System.Windows.Media.RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
+			
 			Shell32.SetCurrentProcessExplicitAppUserModelID("com.squirrel.HearthstoneDeckTracker.HearthstoneDeckTracker");
 			ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
